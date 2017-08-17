@@ -1,0 +1,144 @@
+body {
+	margin: 0;
+	font-family: 'Quicksand';
+	background: #263238;
+	color: #eee;
+	padding-bottom: 20px;
+}
+
+@font-face {
+	font-family: 'Quicksand', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+a {
+	color: #eee;
+	text-decoration: none;
+}
+
+.heading {
+	text-align: center;
+	margin: 5vh 0 10px;
+	font-size: 45px;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav a {
+	background: rgba(100, 100, 100, 0.6);
+	padding: 20px 30px;
+	height: 100%;
+	width: auto;
+	display: block;
+	font-size: 20px;
+	border-radius: 0 0 0 6px;
+	transition: background 0.5s ease;
+}
+
+nav a:hover {
+	background: rgba(100, 100, 100, 1);
+	transition: background 0.5s ease;
+}
+
+.formele {
+	text-align: left;
+	width: 50%;
+	background: transparent;
+	margin: 3vh auto;
+	border-radius: 8px;
+	transition: background 0.8s ease;
+}
+
+.formele > * {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+.error {
+	padding: 10px;
+	font-size: 19px;
+}
+
+.errorcolor {
+	background: #d32f2f;
+}
+
+.successcolor {
+	background: green;
+}
+
+.mssg {
+	text-align: center;
+	padding: 11px 0;
+	width: 200px;
+	border-radius: 7px;
+	margin: 0px auto -1.5vh;
+}
+
+.formele input:not([type='submit']) {
+	width: 90%;
+	background: transparent;
+	border-style: none none solid none;
+	color: #eee;
+	padding: 12px;
+	border-radius: 2px;
+	border-width: 3px;
+	font-weight: bold;
+	font-size: 21px;
+	border-radius: 0;
+	transition: border-color 0.5s ease-in-out;
+}
+
+.formele input[type='submit'] {
+	border-radius: 3px;
+	background: rgba(100, 100, 100, 0.6);
+	color: #eee;
+	border: none;
+	padding: 15px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: background 0.5s ease;
+	margin-top: 30px;
+}
+
+.formele input[type='submit']:hover {
+	background: rgba(100, 100, 100, 1);
+	transition: background 0.5s ease;
+}
+
+.formele input:not([type='submit']):focus {
+	border-color: #2196f3;
+	transition: border-color 0.5s ease-in-out;
+}
+
+.sub-head {
+	margin-top: 40px;
+	font-weight: bolder;
+}
+
+@media only screen and (max-width: 800px) {
+
+	.formele {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	.formele {
+		width: 100%;
+	}
+
+	.heading {
+		font-size: 40px;
+	}
+
+}
