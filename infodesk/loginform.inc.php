@@ -91,6 +91,7 @@
 
 	$conn -> close();
 ?>
+<!-- test -- >
 <div class="heading">Login</div>
 <form action="<?php echo $current_file ?>" method="POST">
 	<div class="mssg formele <?php if(!empty($mssg)) echo 'errorcolor' ?>">&nbsp;<?php if(isset($mssg)) echo $mssg; ?></div>
