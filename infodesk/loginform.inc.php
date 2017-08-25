@@ -67,7 +67,7 @@
 				$mssg = $username_desk . ' not found';
 				$username_desk = '';
 				$password_desk = '';
-			} else if(/*md5(*/$password == $row['PASS'] && /*md5(*/$password_desk == $row_desk['PASS']) {
+			} else if(md5($password) == $row['PASS'] && md5($password_desk) == $row_desk['PASS']) {
 				$_SESSION['user'] = $row_desk['UID'];
 				header('Location: home.php');
 			} else {
