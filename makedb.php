@@ -1,7 +1,7 @@
 <?php 
 	$servername = 'localhost';
 	$dbusername = 'root';
-	$dbpassword = 'root';
+	$dbpassword = '';
 	$dbname = 'tut17';
 	$tablename = 'login';
 	$tablename_desk = 'loginDesk';
