@@ -1,12 +1,4 @@
 <?php
-
-function redirect_to($new_location)
-{
-    header("Location: ".$new_location);
-    exit;
-}
-    
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $firstname = $lastname = $firstname_error = $lastname_error = $pref ='';
         $email = $regno = $phnow = $email_error= $regno_error = $phnow_error = $pref_error = '';
@@ -77,16 +69,16 @@ function redirect_to($new_location)
             } else {
                  if($_POST['pref'] == test_input($_POST['pref'])) {
                     if (preg_match("/^Gaming$/",$pref) || preg_match("/^Normal$/",$pref))
-                    $pref = test_input($_POST['pref']);
+                        $pref = test_input($_POST['pref']);
                 } else {
-                    $pref_error = 'Choose a valid preference';
+                        $pref_error = 'Choose a valid preference';
                 }
             }
         }
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "tut17";
 
 $conn = new mysqli($servername,$username,$password,$dbname);
@@ -94,12 +86,12 @@ if($conn->connect_error){
     die("Connection failed: ".$conn->connect_error);
 }
 
-if($firstname_error == '' && $lastname_error == '' && $email_error == '' && $regno_error == '' && $phnow_error == '' && $pref_error == '') {
-    $stmt = $conn->prepare("INSERT INTO info (FN, LN, EMAIL, REGNO, PHNO, CT) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssids", $firstname, $lastname, $email, $regno, $phnow, $pref);
+// if($firstname_error == '' && $lastname_error == '' && $email_error == '' && $regno_error == '' && $phnow_error == '' && $pref_error == '') {
+    $stmt = $conn->prepare("INSERT INTO participants (firstName, lastName, Email, registrationNumber, phoneNumber, cardType) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssiis", $firstname, $lastname, $email, $regno, $phnow, $pref);
     $stmt->execute();
-}
-    echo "Succesfully registered";
+// }
+    echo "<p>Succesfully registered</p>";
 $stmt -> close();
 $conn -> close();
 

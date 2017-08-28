@@ -32,7 +32,7 @@
 				</div>
 				<div class="inner columns divided">
 					<div class="span-3-25">
-						<form method="post" action="#" style="font-family:'Questrial',sans-serif;font-weight:100;">
+						<form method="post" action="searchresults.php" style="font-family:'Questrial',sans-serif;font-weight:100;">
 							<div class="field half">
 								<h1 style="font-family:'Questrial',sans-serif;font-weight:100;">Search</h1>
 							</div>

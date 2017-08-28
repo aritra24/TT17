@@ -54,11 +54,11 @@
 								<label for="username">Password</label>
 								<input type="password" name="pass" id="pass" placeholder="Password" required/>
 							</div>
-							<div class="field half">
+							<!-- <div class="field half">
 					        <ul class="actions">
 										<li><a href="#first" class="button special color1 circle icon fa-angle-right">Next</a></li>
 						    </ul>
-							</div>
+							</div> -->
 						</form>
 					</div>
 				</div>
