@@ -56,6 +56,11 @@ session_start();
 			$result_desk = $select_statement_desk -> get_result();
 			$row_desk = $result_desk -> fetch_assoc();
 			echo $row_desk['UID'];
+
+			$query = "SELECT UID FROM time where UID = '$user';";
+			mysqli_query($conn,$query);
+			$row_log = mysql_fetch_array($query);
+			}
 			if($row == NULL && $row_desk == NULL) {
 				$mssg = 'Users not found';
 				$username = '';
@@ -75,14 +80,15 @@ session_start();
 				$pass = '';
 				$username = $_SESSION['username'];
 				header('Location:loginform.php');
-			} else if(($password) == $row['PASS'] && ($pass) == $row_desk['PASS']) {
+			} else if($row_log['logged'] == '1') {
+				header('Location:loginform.php');
+			}
+				else if(($password) == $row['PASS'] && ($pass) == $row_desk['PASS']) {
 				$_SESSION['user'] = $row['UID'];
-				$sql = "INSERT INTO time(UID,logged,intime,outtime) VALUES ('$user','1',now(),now());";
-				//$stmt = $conn->prepare("INSERT INTO time(UID,logged,intime,outtime) VALUES (?, ?, ?, ?, ?, ?)");
-                //$t1=now();
-                //$stmt->bind_param("ssii", '$user','1',$t1,$t1);
-                mysqli_query($conn,$sql);
-				header('Location: register.php');
+				$sql = "INSERT INTO time(UID,logged,intime,sysin) VALUES ('$user','1',now(),now());";
+				mysqli_query($conn,$sql);
+				$_SESSION['UID'] = $user;
+                header('Location: register.php');
 			} else {
 				$mssg = 'Incorrect Password';
 				if(($password) != $row['PASS'])
@@ -94,7 +100,7 @@ session_start();
 			$select_statement -> close();
 			$select_statement_desk -> close();
 		}
-	}
+	
 
 	function test_input($data) {
 		$data = trim($data);
@@ -104,5 +110,4 @@ session_start();
 	}
 
 	$conn -> close();
-session_destroy();
 ?>

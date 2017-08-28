@@ -5,6 +5,8 @@
 	$dbname = 'tut17';
 	$tablename = 'login';
 	$tablename_desk = 'loginDesk';
+	$table = 'info';
+	$table1 = 'time';
 
 	$conn = new mysqli($servername, $dbusername, $dbpassword);
 	if($conn -> connect_error) {
@@ -37,5 +39,20 @@
 	} else {
 		echo 'Error creating table: ' . $conn -> error . '<br />';
 	}
+
+	$sql = 'CREATE TABLE ' . $table . ' ( DC INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, FN VARCHAR(20) NOT NULL, LN VARCHAR(20) NOT NULL,EMAIL VARCHAR(30) NOT NULL, REGNO VARCHAR(9) NOT NULL, PHNO VARCHAR(10) NOT NULL, CT VARCHAR(8) NOT NULL);';
+	if($conn -> query($sql) === TRUE) {
+		echo 'Table ' . $table . ' created<br />';
+	} else {
+		echo 'Error creating table: ' . $conn -> error . '<br />';
+	}
+
+	$sql = 'CREATE TABLE ' . $table1 . ' ( UID VARCHAR(20) NOT NULL,logged INT, intime TIMESTAMP(4),outtime TIMESTAMP(4),sysin TIMESTAMP(4));';
+	if($conn -> query($sql) === TRUE) {
+		echo 'Table ' . $table . ' created<br />';
+	} else {
+		echo 'Error creating table: ' . $conn -> error . '<br />';
+	}
+
 	$conn -> close();
 ?>
