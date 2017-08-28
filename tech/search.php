@@ -1,7 +1,6 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-	<title>Infodesk Portal: Sys Admin</title>
+	<title>Infodesk Portal: Search</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
@@ -33,9 +32,9 @@
 				</div>
 				<div class="inner columns divided">
 					<div class="span-3-25">
-						<form method="post" action="inputr.php" style="font-family:'Questrial',sans-serif;font-weight:100;">
+						<form method="post" action="#" style="font-family:'Questrial',sans-serif;font-weight:100;">
 							<div class="field half">
-								<h1 style="font-family:'Questrial',sans-serif;font-weight:100;">REGISTRATION</h1>
+								<h1 style="font-family:'Questrial',sans-serif;font-weight:100;">Search</h1>
 							</div>
 							<div class="field quarter">
 							</div>
@@ -44,7 +43,7 @@
 								<div id="myNav" class="overlay">
 								  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 								  <div class="overlay-content">
-								    <a href="search.php">Search</a>
+								    <a href="register.php">Register</a>
 								    <a href="logout.php">Logout</a>
 								  </div>
 								</div>
@@ -61,39 +60,25 @@
 								</script>
 					<!-- ham ends-->
 							</div>
-								<div class="field half">
+              <div class="field half">
+                <label for="delegate">Delegate Card No</label>
+                <input type="text" name="delegate" id="delegate">
+              </div>
+              <div class="field half">
+								<label for="regno">Registration No.</label>
+								<input type="text" name="regno" id="regno" />
+							</div>
+							<div class="field half">
 								<label for="name">First Name</label>
-								<input type="text" name="firstname" id="firstname" required/>
+								<input type="text" name="firstname" id="firstname" />
 							</div>
 							<div class="field half">
 								<label for="name">Last Name</label>
-								<input type="text" name="lastname" id="lastname" required/>
-							</div>
-							<div class="field half">
-								<label for="email">Email</label>
-								<input type="email" name="email" id="email" required/>
-							</div>
-							<div class="field quarter">
-								<label for="regno">Registration No.</label>
-								<input type="text" name="regno" id="regno" required/>
-							</div>
-							<div class="field quarter">
-								<label for="phnow">Phone No.</label>
-								<input type="text" name="phnow" id="phnow" required/>
-							</div>
-							<div class="field third">
-								<label for="pref">Card Type</label>
-								<div class="select-wrapper">
-									<select name="pref" id="pref" required>
-										<option value="">-</option>
-										<option value="1">Normal</option>
-										<option value="2">Gaming</option>
-									</select>
-								</div>
+								<input type="text" name="lastname" id="lastname" />
 							</div>
 							<div class="field">
 								<ul class="actions">
-									<li><input type="submit" name="submit" value="Register" class="button special" /></li>
+									<li><input type="submit" name="submit" value="Search" class="button special" /></li>
 									<li><input type="reset" value="Reset" /></li>
 								</ul>
 							</div>

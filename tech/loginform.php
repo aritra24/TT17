@@ -34,14 +34,16 @@
 				<div class="inner columns divided">
 
 					<div class="span-2-75">
-					
+
 						<form method="POST" action="input.php" id="f1" style="font-family:'Questrial',sans-serif;font-weight:100;">
 
 						    <div class="field half">
 								<h2 class="major" style="font-family:'Questrial',sans-serif;font-weight:100;">Login</h2>
 							</div>
+							<div class="field quarter">
+							</div>
 							<!-- ham-->
-							<div class="field half">
+							<div class="field quarter">
 							<div id="myNav" class="overlay">
 							  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 							  <div class="overlay-content">
@@ -62,11 +64,11 @@
 							</script>
 						</div>
 							<!--ham end-->
-							<div class="field">
+							<div class="field mhalf">
 								<label for="username">Infodesk User Login</label>
 								<input type="text" name="user" id="user" placeholder="Username" required/>
 							</div>
-							<div class="field">
+							<div class="field mhalf">
 								<label for="username">Password</label>
 								<input type="password" name="pass" id="pass" placeholder="Password" required/>
 							</div>
@@ -76,7 +78,7 @@
 						    </ul>
 							</div>
 					</div>
-					
+
 					<div class="span-2-25">
 							<h2>REMEMBER!</h2>
 							<ol>
@@ -88,7 +90,7 @@
 			       <div class="span-3-25" id="first">
                           <h2 class="major" style="font-family:'Questrial',sans-serif;font-weight:100;">System Admin</h2>
 
-                     <div class="field">
+            <div class="field">
 					 <label for="username">System Admin</label>
 					 <input type="text" name="username" id="username" placeholder="Username" required/>
 				    </div>
@@ -96,12 +98,13 @@
 						<label for="password">Password</label>
 					    <input type="password" name="password" id="password" placeholder="Password" required/>
 				    </div>
+						<div class="field">
 							<ul class="actions">
 								<li><button onClick="sendForm()" class="button special">Login</button></li>
 								<li><input type="reset" value="Reset" /></li>
 							</ul>
-				    
-				     
+            </div>
+
 		            </div>
 		            </form>
 		            <div class="span-1-5">
