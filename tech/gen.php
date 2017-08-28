@@ -41,9 +41,11 @@
 							<br>
 								<div class="field">
 									<h2 style="font-family:'Questrial',sans-serif;font-weight:100;">Your delegate card no:</h2>
-									<h2 style="font-family:'Questrial',sans-serif;font-weight:100;"><?php
-session_start();									
+									<h2 style="font-family:'Questrial',sans-serif;font-weight:100;"><?php									
+include 'core.inc.php';
+if (loggedin()){
 $link = mysqli_connect("localhost", "root", "", "tut17");
+
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -62,6 +64,7 @@ if ($stmt = mysqli_prepare($link, "SELECT DC FROM info WHERE REGNO=?")) {
 }
 mysqli_close($link);
 $_SESSION['firstname'] = $_SESSION['lastname']= $_SESSION['email']= $_SESSION['phnow']= $_SESSION['regno']= $_SESSION['pref'] ='';
+}
 ?></h2>
 								</div>
              <br>
